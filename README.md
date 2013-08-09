@@ -51,7 +51,8 @@ Variables are all set using `#define` with a constructor `@""`
 #define arrayVariableName [NSMutableArray arrayWithObjects: @"object", @"object-two", @"Another object", nil]
 ```
 
-```objective-c 
+### Default Variables
+```objc 
 # Note: Hash removed from #define statements to enable code highlighting for display purposes
 define SurfShell_companyOrSiteName @"SurfShell"
 define SurfShell_loadUrl @"http://www.example.com/"
@@ -66,6 +67,7 @@ define SurfShell_userAgent_iPhone @"SurfShell_iOS_App"
 define SurfShell_kTrackingId @"UA-XXXXXXX-X"
 ```
 
+### Variable Descriptions
 
 Variable|Description|Default
 ---|---|---
