@@ -28,9 +28,13 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 2. In XCode, open `SurfShell.xcodeproj`
 3. Rename the Project to your desired App Name. 
 ![Rename XCode Project](https://github.com/adamdehaven/SurfShell/raw/master/docs/rename-project.png)
-4. Open `SurfShell_Globals.h` and modify the [default settings](#defaults). 
+4. Open `SurfShell_Globals.h` and modify the [default settings](#settings).
+5. Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:
+	1. `URL types` > `Item 0` > `URL Schemes`
+		1.  Change the value of `Item 0` to match the `SurfShell_customUrlScheme` in `SurfShell_Globals.h`.
+		2.  Change the value of `Item 1` to your Facebook Page ID, leaving the `fb` prefix.
 
-## DEFAULTS
+## SETTINGS
 Variable|Description|Default
 ---|---|---
 `SurfShell_companyOrSiteName`|The name of your company, website, app, etc.|`SurfShell`
