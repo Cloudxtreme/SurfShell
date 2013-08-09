@@ -33,9 +33,30 @@ STEP|INSTRUCTIONS
 6.|In the XCode Navigator, open the **Supporting Files** group. If your `MyProject-Info.plist` and `MyProject-Prefix.pch` files appear **red** in color, follow these steps for both:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Click the file to select it.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. On the right side of XCode, click the file source button (shown below)<br>![XCode File Source Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/file-source-button.png)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Select the file XCode *should* be pointed to (in reality, it will appear as if you're selecting the same file being linked to). Repeat for the second file.
 7.|After renaming, click on your Project in the XCode Navigator, and then click on the **Summary** tab. Check for a button that reads "Choose Info.plist File..." (shown below)<br>![Choose Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/choose-info-plist.png)<br>If the button is present, click the button, select the suggested `MyProject-Info.plist` file, and click **Choose** to select it.<br>![Select Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/select-info-plist.png)
 8.|Select **iOS Device** as the destination for your project ( **Product** \ **Destination** \ **iOS Device** ) and then Clean the Product ( **Product** \ **Clean** ).
-9.|If you will be linking to any **PDF** documents from the app, drag them into the `pdf` folder within the **Supporting Files** group. Be sure to check the box to "*Copy items into destination group's folder (if needed)*" as well as the box "*Add to targets*". 
+9.|If you will be linking to any **PDF** documents from the app, drag them into the `pdf` folder within the **Supporting Files** group. Be sure to check the box to **Copy items into destination group's folder (if needed)** as well as the box **Add to targets**. 
 
 ## GLOBAL VARIABLES
+
+```objective-c 
+# hash removed from #define to enable code highlighting
+define SurfShell_companyOrSiteName @"SurfShell"
+define SurfShell_loadUrl @"http://www.example.com/"
+define SurfShell_baseUrl @"http://www.example.com/" 
+define SurfShell_customUrlScheme @"surfshell://" 
+define SurfShell_pagesToOpenInModal [NSMutableArray arrayWithObjects: @"contact-us.php", @"directory/sub-directory", nil]
+define SurfShell_closeModalOnClick YES 
+define SurfShell_pagesToOpenInSafari [NSMutableArray arrayWithObjects: @"external-page.html", @"tracking/", nil]
+define SurfShell_twitterHandle @"adamdehaven"
+define SurfShell_userAgent_iPhone5 @"SurfShell_iOS_App_Tall" 
+define SurfShell_userAgent_iPhone @"SurfShell_iOS_App" 
+define SurfShell_kTrackingId @"UA-XXXXXXX-X"
+```
+
+* All variables are set within `SurfShell_Globals.h` 
+* Variables are all contained within `#define`
+	* String variable format: `#define variableName @"value"`
+	* Array variable format: `#define arrayVariableName [NSMutableArray arrayWithObjects: @"object",@"object-two",@"Another object",nil]` 
+
 Variable|Description|Default
 ---|---|---
 `SurfShell_companyOrSiteName`|The name of your company, website, app, etc.|`SurfShell`
