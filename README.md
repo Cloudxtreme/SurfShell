@@ -37,6 +37,20 @@ STEP|INSTRUCTIONS
 
 ## GLOBAL VARIABLES
 
+All variables are set within `SurfShell_Globals.h`
+
+###Variable Format
+Variables are all set using `#define` with a constructor `@""`
+
+#####String Variables
+```
+#define stringVariableName @"value"
+```
+#####Array Variables
+```
+#define arrayVariableName [NSMutableArray arrayWithObjects: @"object", @"object-two", @"Another object", nil]
+```
+
 ```objective-c 
 # Note: Hash removed from #define statements to enable code highlighting for display purposes
 define SurfShell_companyOrSiteName @"SurfShell"
@@ -52,10 +66,6 @@ define SurfShell_userAgent_iPhone @"SurfShell_iOS_App"
 define SurfShell_kTrackingId @"UA-XXXXXXX-X"
 ```
 
-* All variables are set within `SurfShell_Globals.h` 
-* Variables are all contained within `#define`
-	* String variable format: `#define variableName @"value"`
-	* Array variable format: `#define arrayVariableName [NSMutableArray arrayWithObjects: @"object",@"object-two",@"Another object",nil]` 
 
 Variable|Description|Default
 ---|---|---
