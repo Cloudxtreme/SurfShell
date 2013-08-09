@@ -38,7 +38,7 @@ STEP|INSTRUCTIONS
 ## GLOBAL VARIABLES
 
 ```objective-c 
-# hash removed from #define to enable code highlighting
+# Note: Hash removed from #define statements to enable code highlighting for display purposes
 define SurfShell_companyOrSiteName @"SurfShell"
 define SurfShell_loadUrl @"http://www.example.com/"
 define SurfShell_baseUrl @"http://www.example.com/" 
