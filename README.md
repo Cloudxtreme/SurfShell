@@ -1,6 +1,8 @@
 SurfShell v1.0
 =========
 
+**_README UNDER CONSTRUCTION_**
+
 A powerful iOS app shell to turn any website into an elegant, releasable iOS app that can utilize native iOS device actions. Created and maintained by [@adamdehaven](#author).
 
 ## FEATURES
