@@ -23,20 +23,19 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 * [Google Analytics for iOS](https://developers.google.com/analytics/devguides/collection/ios/v2/) App Tracking Code (Optional)
 
 ## SETUP
+STEP|INSTRUCTIONS
+:---:|---
+1.|[Download SurfShell](https://github.com/adamdehaven/SurfShell/archive/master.zip).
+2.|In XCode, open `SurfShell.xcodeproj`
+3.|Open `SurfShell_Globals.h` and modify the [Global Variables](#global-variables).
+4.|Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Change the value for `FacebookAppID` to your Facebook Page ID.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Change the value for `FacebookDisplayName` to the name of your app.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Change the `Application Category` to your desired App Category for the App Store.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Within the `.plist` file, navigate to `URL types` \ `Item 0` \ `URL Schemes`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Change the value of `Item 0` to match the `SurfShell_customUrlScheme` in `SurfShell_Globals.h`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just the string; ex. `surfshell`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Change the value of `Item 1` to your Facebook Page ID, leaving the `fb` prefix.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex. `fb123456789123456`
+5.|Rename the Project to your desired App Name, and accept XCode's suggested Rename changes. ![Rename XCode Project](https://github.com/adamdehaven/SurfShell/raw/master/docs/rename-project.png)
+6.|In the XCode Navigator, open the **Supporting Files** group. If your `MyProject-Info.plist` and `MyProject-Prefix.pch` files appear **red** in color, follow these steps for both:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Click the file to select it.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. On the right side of XCode, click the file source button (shown below)<br>![XCode File Source Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/file-source-button.png)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Select the file XCode *should* be pointed to (in reality, it will appear as if you're selecting the same file being linked to). Repeat for the second file.
+7.|After renaming, click on your Project in the XCode Navigator, and then click on the **Summary** tab. Check for a button that reads "Choose Info.plist File..." (shown below)<br>![Choose Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/choose-info-plist.png)<br>If the button is present, click the button, select the suggested `MyProject-Info.plist` file, and click **Choose** to select it.<br>![Select Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/select-info-plist.png)
+8.|Select **iOS Device** as the destination for your project ( **Product** \ **Destination** \ **iOS Device** ) and then Clean the Product ( **Product** \ **Clean** ).
+9.|If you will be linking to any **PDF** documents from the app, drag them into the `pdf` folder within the **Supporting Files** group. Be sure to check the box to "Copy items into destination group's folder (if needed)" as well as the box "Add to targets". 
 
-1. [Download SurfShell](https://github.com/adamdehaven/SurfShell/archive/master.zip).
-2. In XCode, open `SurfShell.xcodeproj`
-3. Rename the Project to your desired App Name, and accept XCode's suggested Rename changes. 
-
-![Rename XCode Project](https://github.com/adamdehaven/SurfShell/raw/master/docs/rename-project.png)
-
-4. Open `SurfShell_Globals.h` and modify the [default settings](#settings).
-5. Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:
-	1. `URL types` > `Item 0` > `URL Schemes`
-		1.  Change the value of `Item 0` to match the `SurfShell_customUrlScheme` in `SurfShell_Globals.h`.
-		2.  Change the value of `Item 1` to your Facebook Page ID, leaving the `fb` prefix.
-
-## SETTINGS
+## GLOBAL VARIABLES
 Variable|Description|Default
 ---|---|---
 `SurfShell_companyOrSiteName`|The name of your company, website, app, etc.|`SurfShell`
