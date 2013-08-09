@@ -49,14 +49,14 @@
 
 // Define pages (path after SurfShell_baseUrl) to open within app modal. PDF files are already included.
 // Ex: http://www.example.com/contact-us.php = @"contact-us.php". Can include whole directory like @"products/"
-#define SurfShell_pagesToOpenInModal [NSMutableArray arrayWithObjects: @"contact-us.php",nil]
+#define SurfShell_pagesToOpenInModal [NSMutableArray arrayWithObjects: @"",nil]
 
 // Close modals if user clicks any link shown within? (Good for displaying confirmation pages, etc.) YES or NO. Default: YES
 #define SurfShell_closeModalOnClick YES 
 
 // Open page(s) in Safari, rather than in the app. (path after SurfShell_baseUrl) 
 // Ex: http://www.example.com/external/page.html = @"external/page.html". Can include whole directory like @"products/"
-#define SurfShell_pagesToOpenInSafari [NSMutableArray arrayWithObjects: @"products/",nil]
+#define SurfShell_pagesToOpenInSafari [NSMutableArray arrayWithObjects: @"",nil]
 
 // Twitter username without the "@" symbol
 #define SurfShell_twitterHandle @"adamdehaven"
