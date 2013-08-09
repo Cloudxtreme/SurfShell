@@ -26,8 +26,10 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 
 1. [Download SurfShell](https://github.com/adamdehaven/SurfShell/archive/master.zip).
 2. In XCode, open `SurfShell.xcodeproj`
-3. Rename the Project to your desired App Name. 
+3. Rename the Project to your desired App Name, and accept XCode's suggested Rename changes. 
+
 ![Rename XCode Project](https://github.com/adamdehaven/SurfShell/raw/master/docs/rename-project.png)
+
 4. Open `SurfShell_Globals.h` and modify the [default settings](#settings).
 5. Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:
 	1. `URL types` > `Item 0` > `URL Schemes`
