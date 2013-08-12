@@ -73,7 +73,7 @@ define SurfShell_kTrackingId @"UA-XXXXXXX-X"
 
 ### Variable Descriptions
 
-Variable|Description|Default
+VARIABLE|DESCRIPTION|DEFAULT
 ---|---|---
 `SurfShell_companyOrSiteName`|The name of your company, website, app, etc.|`SurfShell`
 `SurfShell_loadUrl`|The URL to load upon app launch. **You must include the trailing slash!**|`http://www.example.com/`
@@ -89,8 +89,15 @@ Variable|Description|Default
 
 ## NOTES
 
-1. The Launch image (`Default.png`), webView loading image (`webViewLoadImage.png`), and connection error image (`connectionError.png`) are basically the same image with different file names, with the connection error having a message over the logo. You may create your own images, name them the same, and just mirror the dimensions for each file found in the **graphics** folder. You will need 4 different sizes for each image.
-2. The loading spinner can be modified in an image editor such as [Gimp](http://www.gimp.org). If you'd just like a different color, just change the **Hue** of each of the images in the **graphics/activityImageView** folder.
+1. The loading spinner can be modified in an image editor such as [Gimp](http://www.gimp.org). If you'd just like a different color, just change the **Hue** of each of the images in the **graphics/activityImageView** folder.
+2. The Launch image (`Default.png`), webView loading image (`webViewLoadImage.png`), and connection error image (`connectionError.png`) are basically the same image with different file names, with the connection error having a message over the logo. You may create your own images, name them the same, and just mirror the dimensions for each file found in the **graphics** folder. You will need 4 different sizes for each image, shown in the table below:
+
+FILE NAME|SIZE|DEVICE(S)
+---|:---:|:---:
+`Default.png`<br>`webViewLoadImage.png`<br>`connectionError.png`|320 x 480|iPhone (non-retina)
+`Default@2x.png`<br>`webViewLoadImage@2x.png`<br>`connectionError@2x.png`|640 x 960|iPhone (retina)
+`webViewLoadImage-568h.png`<br>`connectionError-568h.png`|320 x 568|N/A (as of 8/2013)
+`Default-568h@2x.png`<br>`webViewLoadImage-568h@2x.png`<br>`connectionError-568h@2x.png`|640 x 1136|iPhone Tall (retina)
 
 ## AUTHOR
 
