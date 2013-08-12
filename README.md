@@ -87,6 +87,11 @@ Variable|Description|Default
 `SurfShell_userAgent_iPhone`|Browser User Agent set by the app running on an iPhone (not tall). Useful if your web content is altered depending on device, screen size, etc.|`SurfShell_iOS_App`
 `SurfShell_kTrackingId`|Google Analytics iOS App Tracking ID. If you have not yet set up a profile in Google Analytics, do so [now](https://developers.google.com/analytics/devguides/collection/ios/v2/).|`UA-XXXXXXX-X`
 
+## NOTES
+
+1. The Launch image (`Default.png`), webView loading image (`webViewLoadImage.png`), and connection error image (`connectionError.png`) are basically the same image with different file names, with the connection error having a message over the logo. You may create your own images, name them the same, and just mirror the dimensions for each file found in the **graphics** folder. You will need 4 different sizes for each image.
+2. The loading spinner can be modified in an image editor such as [Gimp](http://www.gimp.org). If you'd just like a different color, just change the **Hue** of each of the images in the **graphics/activityImageView** folder.
+
 ## AUTHOR
 
 **Adam Dehaven**
