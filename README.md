@@ -23,6 +23,9 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 * [Google Analytics for iOS](https://developers.google.com/analytics/devguides/collection/ios/v2/) App Tracking Code (Optional)
 
 ## SETUP
+
+While the steps appear complicated at first sight, these **{INSERT NUMBER}** steps will have your app up and running in **_less than 5 minutes_**!
+
 STEP|INSTRUCTIONS
 :---:|---
 1.|[Download the SurfShell package](https://github.com/adamdehaven/SurfShell/archive/master.zip).
