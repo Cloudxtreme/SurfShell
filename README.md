@@ -8,12 +8,12 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 ## FEATURES
 
 * Easily configurable default settings.
-* Commented code for easy customizations.
 * Native iOS Twitter, Facebook, & Email sharing.
 * Google Analytics iOS SDK integration for easy screen tracking.
-* **Modal View** for displaying local & external PDFs, external web pages, etc.
-* **Network Connectivity Monitor** that displays an error graphic (customizable) if App is launched and cannot access the web. 
-	* Rechecks network connection when user returns to app and reloads defined homepage upon connection.
+* **Modal View** for displaying local & external PDFs, confirmation messages, external websites, etc.
+* **Network Connectivity Monitor** for displaying an error graphic if App is launched and cannot access the web. 
+	* Rechecks network connection when user returns to app and reloads upon connection.
+* Commented code for easy customizations.
 
 ## REQUIREMENTS
 
@@ -25,10 +25,10 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 ## SETUP
 STEP|INSTRUCTIONS
 :---:|---
-1.|[Download SurfShell](https://github.com/adamdehaven/SurfShell/archive/master.zip).
-2.|In XCode, open `SurfShell.xcodeproj`
-3.|Open `SurfShell_Globals.h` and modify the [Global Variables](#global-variables).
-4.|Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Change the value for `FacebookAppID` to your Facebook Page ID.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Change the value for `FacebookDisplayName` to the name of your app.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Change the `Application Category` to your desired App Category for the App Store.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Within the `.plist` file, navigate to `URL types` \ `Item 0` \ `URL Schemes`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Change the value of `Item 0` to match the `SurfShell_customUrlScheme` in `SurfShell_Globals.h`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just the string; ex. `surfshell`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Change the value of `Item 1` to your Facebook Page ID, leaving the `fb` prefix.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex. `fb123456789123456`
+1.|[Download the SurfShell package](https://github.com/adamdehaven/SurfShell/archive/master.zip).
+2.|Open `SurfShell.xcodeproj` in XCode.
+3.|Modify `SurfShell_Globals.h` by changing the values for all desired [Global Variables](#global-variables).
+4.|Open `SurfShell-Info.plist` within the **Supporting Files** group and modify the following fields:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Change the value for `FacebookAppID` to your Facebook Page ID (optional).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Change the value for `FacebookDisplayName` to the name of your app (optional).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Change the `Application Category` to your desired App Category for the App Store (optional).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Within this `.plist` file, navigate to `URL types` \ `Item 0` \ `URL Schemes`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Change the value of `Item 0` to match the `SurfShell_customUrlScheme` in `SurfShell_Globals.h`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just the string; ex. `surfshell`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Change the value of `Item 1` to your Facebook Page ID, leaving the `fb` prefix (optional).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex. `fb123456789123456`
 5.|Rename the Project to your desired App Name, and accept XCode's suggested Rename changes. ![Rename XCode Project](https://github.com/adamdehaven/SurfShell/raw/master/docs/rename-project.png)
 6.|In the XCode Navigator, open the **Supporting Files** group. If your `MyProject-Info.plist` and `MyProject-Prefix.pch` files appear **red** in color, follow these steps for both:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Click the file to select it.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. On the right side of XCode, click the file source button (shown below)<br>![XCode File Source Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/file-source-button.png)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Select the file XCode *should* be pointed to (in reality, it will appear as if you're selecting the same file being linked to). Repeat for the second file.
 7.|After renaming, click on your Project in the XCode Navigator, and then click on the **Summary** tab. Check for a button that reads "Choose Info.plist File..." (shown below)<br>![Choose Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/choose-info-plist.png)<br>If the button is present, click the button, select the suggested `MyProject-Info.plist` file, and click **Choose** to select it.<br>![Select Info.plist Button](https://github.com/adamdehaven/SurfShell/raw/master/docs/select-info-plist.png)
