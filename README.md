@@ -112,3 +112,4 @@ FILE NAME|SIZE|DEVICE(S)
 ## COPYRIGHT &amp; LICENSE
 
 Copyright &copy; 2013 Adam Dehaven under [the MIT License](https://github.com/adamdehaven/SurfShell/blob/master/LICENSE)
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b9cf6e7c8245156a73d9b61dcbd0038f "githalytics.com")](http://githalytics.com/adamdehaven/SurfShell)
