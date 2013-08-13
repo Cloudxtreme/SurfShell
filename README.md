@@ -88,7 +88,12 @@ VARIABLE|DESCRIPTION|DEFAULT
 ## NOTES
 
 1. The loading spinner can be modified in an image editor such as [Gimp](http://www.gimp.org). If you'd just like a different color, just change the **Hue** of each of the images in the **graphics/activityImageView** folder.
-2. The Launch image (`Default.png`), webView loading image (`webViewLoadImage.png`), and connection error image (`connectionError.png`) are basically the same image with different file names, with the connection error having a message over the logo. You may create your own images, name them the same, and just mirror the dimensions for each file found in the **graphics** folder. You will need 4 different sizes for each image, shown in the table below:
+
+2. The `SurfShell_customUrlScheme` variable is set in order to link to your app from other apps, with the default being `surfshell://` The way this works is simple; the app takes anything that comes **after** the custom URL and appends it to the `SurfShell_baseUrl` variable, and then loads that in the apps webView element. For example, if another app passes `surfshell://products/widgets.html` the device will switch to the SurfShell app, and load `http://www.example.com/products/widgets.html`
+
+3. Setting `SurfShell_closeModalOnClick` to `YES` tells the app that if a link is clicked inside of a modal view that contains the `SurfShell_baseUrl` to automatically close the modal and return to the previous screen. Useful if displaying something along the lines of a confirmation page that you'd like the user to view only, and then return.
+
+4. The Launch image (`Default.png`), webView loading image (`webViewLoadImage.png`), and connection error image (`connectionError.png`) are basically the same image with different file names, with the connection error having a message over the logo. You may create your own images, name them the same, and just mirror the dimensions for each file found in the **graphics** folder. You will need 4 different sizes for each image, shown in the table below:
 
 FILE NAME|SIZE|DEVICE(S)
 ---|:---:|:---:
