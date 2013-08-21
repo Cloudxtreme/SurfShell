@@ -18,7 +18,7 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 * XCode v4.6.3+
 * iOS v6.1+
 * Facebook Page with page id (Optional - To link to app via Facebook's native iOS App)
-* [Google Analytics for iOS](https://developers.google.com/analytics/devguides/collection/ios/v2/) App Tracking Code (Optional)
+* [Google Analytics for iOS](https://developers.google.com/analytics/devguides/collection/ios/v2/#before_begin) App Tracking Code (Optional)
 
 ## SETUP
 
@@ -83,7 +83,7 @@ VARIABLE|DESCRIPTION|DEFAULT
 `SurfShell_twitterHandle`|Your Twitter username without the `@` symbol.|`adamdehaven`
 `SurfShell_userAgent_iPhone5`|Browser User Agent set by the app running on an iPhone 5 (or future iPhones with a default `568` height. Useful if your web content is altered depending on device, screen size, etc.|`SurfShell_iOS_App_Tall`
 `SurfShell_userAgent_iPhone`|Browser User Agent set by the app running on an iPhone (not tall). Useful if your web content is altered depending on device, screen size, etc.|`SurfShell_iOS_App`
-`SurfShell_kTrackingId`|Google Analytics iOS App Tracking ID. If you have not yet set up a profile in Google Analytics, do so [now](https://developers.google.com/analytics/devguides/collection/ios/v2/).|`UA-XXXXXXX-X`
+`SurfShell_kTrackingId`|Google Analytics iOS App Tracking ID. If you have not yet set up a profile in Google Analytics, do so [now](https://developers.google.com/analytics/devguides/collection/ios/v2/#before_begin).|`UA-XXXXXXX-X`
 
 ## NOTES
 
