@@ -23,7 +23,7 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 
 ## REQUIREMENTS
 
-* XCode v4.6.3+
+* XCode v5.0+
 * iOS v6.1+
 * Facebook Page with page id (Optional - To link to app via Facebook's native iOS App)
 * [Google Analytics SDK for iOS v3.0](https://developers.google.com/analytics/devguides/collection/ios/) App Tracking Code (Optional)
