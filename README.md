@@ -1,4 +1,4 @@
-SurfShell v1.0
+SurfShell v2.0
 =========
 
 A powerful iOS app shell to turn any website into an elegant, releasable iOS app that can utilize native iOS device actions. Created and maintained by [@adamdehaven](#author).
@@ -26,7 +26,7 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 * XCode v4.6.3+
 * iOS v6.1+
 * Facebook Page with page id (Optional - To link to app via Facebook's native iOS App)
-* [Google Analytics for iOS](https://developers.google.com/analytics/devguides/collection/ios/v2/#before_begin) App Tracking Code (Optional)
+* [Google Analytics SDK for iOS v3.0](https://developers.google.com/analytics/devguides/collection/ios/) App Tracking Code (Optional)
 
 ## SETUP
 
@@ -74,7 +74,7 @@ define SurfShell_pagesToOpenInSafari [NSMutableArray arrayWithObjects: @"externa
 define SurfShell_twitterHandle @"adamdehaven"
 define SurfShell_userAgent_iPhone5 @"SurfShell_iOS_App_Tall" 
 define SurfShell_userAgent_iPhone @"SurfShell_iOS_App" 
-define SurfShell_kTrackingId @"UA-XXXXXXX-X"
+define SurfShell_GA_trackingID @"UA-XXXXXXX-X"
 ```
 
 ### Variable Descriptions
@@ -91,7 +91,7 @@ VARIABLE|DESCRIPTION|DEFAULT
 `SurfShell_twitterHandle`|Your Twitter username without the `@` symbol.|`adamdehaven`
 `SurfShell_userAgent_iPhone5`|Browser User Agent set by the app running on an iPhone 5 (or future iPhones with a default `568` height. Useful if your web content is altered depending on device, screen size, etc.|`SurfShell_iOS_App_Tall`
 `SurfShell_userAgent_iPhone`|Browser User Agent set by the app running on an iPhone (not tall). Useful if your web content is altered depending on device, screen size, etc.|`SurfShell_iOS_App`
-`SurfShell_kTrackingId`|Google Analytics iOS App Tracking ID. If you have not yet set up a profile in Google Analytics, do so [now](https://developers.google.com/analytics/devguides/collection/ios/v2/#before_begin).|`UA-XXXXXXX-X`
+`SurfShell_GA_trackingID`|Google Analytics iOS App Tracking ID. If you have not yet set up a profile in Google Analytics, do so [now](https://developers.google.com/analytics/devguides/collection/ios/).|`UA-XXXXXXX-X`
 
 ## NOTES
 
