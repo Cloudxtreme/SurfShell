@@ -50,6 +50,10 @@
     return [self initWithURL:[NSURL URLWithString:urlString]];
 }
 
+- (void)doneButtonClicked:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (id)initWithURL:(NSURL *)URL {
     self.webViewController = [[SurfShell_WebViewController alloc] initWithURL:URL];
     if (self = [super initWithRootViewController:self.webViewController]) {
