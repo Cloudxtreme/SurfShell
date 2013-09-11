@@ -1,6 +1,6 @@
 /* ==========================================================
  * SurfShell_ViewController.m
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )
@@ -46,7 +46,10 @@
 
 -(IBAction)back:(id)sender{
     
-    [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"closeModal" withAction:@"doneClick" withLabel:@"exitedModalView" withValue:[NSNumber numberWithInt:1]];
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"closeModal"
+                                                               action:@"doneClick"
+                                                                label:@"exitedModalView"
+                                                                value:[NSNumber numberWithInt:1]] build]];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -57,7 +60,7 @@
     [super viewDidLoad];
     NSLog(@"viewDidLoad");
     
-    self.trackedViewName = @"Main App Screen";
+    self.screenName = @"Home Screen Initially Loaded";
     
     // Subscribe to Notification, and perform 'handleDidBecomeActive'
     [[NSNotificationCenter defaultCenter] addObserver: self
@@ -192,7 +195,6 @@
     if([SurfShell_currentUrl rangeOfString:SurfShell_customUrlScheme].location != NSNotFound) {
         NSLog(@"shouldstart DETECT CUSTOM URL");
         
-        [[GAI sharedInstance].defaultTracker setReferrerUrl:@"launchedFromCustomUrl"];
     }
     
     if([SurfShell_currentUrl hasSuffix:@".pdf"]) {
@@ -217,7 +219,10 @@
         
         // Open external PDFs not in app or on SurfShell_baseUrl website in modal
         if([SurfShell_currentUrl hasSuffix:@".pdf"] && (![SurfShell_currentUrl hasPrefix:SurfShell_baseUrl] || fileExistPath == nil)){
-            [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"openModal" withAction:@"externalLinkClick" withLabel:[NSString stringWithFormat:@"Link: %@", SurfShell_currentUrl] withValue:[NSNumber numberWithInt:1]];
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"openModal"
+                                                                       action:@"externalLinkClick"
+                                                                        label:[NSString stringWithFormat:@"Link: %@", SurfShell_currentUrl]
+                                                                        value:[NSNumber numberWithInt:1]] build]];
             
             SurfShell_ModalViewController *webViewController = [[SurfShell_ModalViewController alloc] initWithAddress:SurfShell_currentUrl];
             webViewController.modalPresentationStyle = UIModalPresentationPageSheet;
@@ -233,7 +238,10 @@
         
         // Open PDFs (app bundle files) in modal
         if([SurfShell_currentUrl hasSuffix:@".pdf"] && ([SurfShell_currentUrl hasPrefix:SurfShell_baseUrl] || fileExistPath != nil)){
-            [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"openModal" withAction:@"bundleLinkClick" withLabel:[NSString stringWithFormat:@"Link: %@", SurfShell_currentUrl] withValue:[NSNumber numberWithInt:1]];
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"openModal"
+                                                                       action:@"bundleLinkClick"
+                                                                        label:[NSString stringWithFormat:@"Link: %@", SurfShell_currentUrl]
+                                                                        value:[NSNumber numberWithInt:1]] build]];
             
             //Show local file in modal with SurfShell_pdfName string as file name without ".pdf"
             SurfShell_ModalViewController *webViewController = [[SurfShell_ModalViewController alloc] initWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:SurfShell_pdfName ofType:@"pdf"]]];
@@ -273,7 +281,10 @@
                 NSLog(@"safariPage: %@ does NOT contain %@, so continue / open in app.",SurfShell_currentUrl,safariPage);
             } else {
                 NSLog(@"safariPage: %@ DOES contain %@, so open in Safari.",SurfShell_currentUrl,safariPage);
-                [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"openInSafari" withAction:@"externalLinkClick" withLabel:[NSString stringWithFormat:@"External Link: %@", SurfShell_currentUrl] withValue:[NSNumber numberWithInt:1]];
+                [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"openInSafari"
+                                                                           action:@"externalLinkClick"
+                                                                            label:[NSString stringWithFormat:@"External Link: %@", SurfShell_currentUrl]
+                                                                            value:[NSNumber numberWithInt:1]] build]];
                 
                 [[UIApplication sharedApplication] openURL:request.URL];
                 return NO;
@@ -332,7 +343,10 @@
                 
                 if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
                     
-                    [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Twitter" withAction:@"Tweet Share Sheet" withLabel:[NSString stringWithFormat:@"Tweet: %@", TwitterShareSheetUrl] withValue:[NSNumber numberWithInt:1]];
+                    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Twitter"
+                                                                               action:@"Tweet Share Sheet"
+                                                                                label:[NSString stringWithFormat:@"Tweet: %@", TwitterShareSheetUrl]
+                                                                                value:[NSNumber numberWithInt:1]] build]];
                     
                     SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
                     [tweetSheet setInitialText:TwitterShareSheetPageTitle];
@@ -343,7 +357,10 @@
                     
                 } else {
                     
-                    [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Twitter" withAction:@"showNoTwitterAccountsAlert" withLabel:@"cantTweetFromSLComposeViewController" withValue:[NSNumber numberWithInt:1]];
+                    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Twitter"
+                                                                               action:@"showNoTwitterAccountsAlert"
+                                                                                label:@"cantTweetFromSLComposeViewController"
+                                                                                value:[NSNumber numberWithInt:1]] build]];
                     
                     UIAlertView *alertView = [[UIAlertView alloc]
                                               initWithTitle:@"No Twitter Account"
@@ -357,7 +374,10 @@
                 }
             } else {
                 
-                [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Twitter" withAction:@"showNoTwitterAccounts" withLabel:@"cantTweetFromTWTweetComposeViewController" withValue:[NSNumber numberWithInt:1]];
+                [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Twitter"
+                                                                           action:@"showNoTwitterAccounts"
+                                                                            label:@"cantTweetFromTWTweetComposeViewController"
+                                                                            value:[NSNumber numberWithInt:1]] build]];
                 
                 NSLog(@"can NOT share via Twitter Sheet");
                 
@@ -426,10 +446,16 @@
                      } else {
                          if (result == FBNativeDialogResultSucceeded) {
                              /* handle success */
-                             [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Facebook" withAction:@"FacebookShared" withLabel:[NSString stringWithFormat:@"FbShared: %@", FbShareSheetUrl] withValue:[NSNumber numberWithInt:1]];
+                             [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Facebook"
+                                                                                        action:@"FacebookShared"
+                                                                                         label:[NSString stringWithFormat:@"FbShared: %@", FbShareSheetUrl]
+                                                                                         value:[NSNumber numberWithInt:1]] build]];
                          } else {
                              /* handle user cancel */
-                             [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Facebook" withAction:@"FacebookCancelled" withLabel:[NSString stringWithFormat:@"FbCancelled: %@", FbShareSheetUrl] withValue:[NSNumber numberWithInt:1]];
+                             [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Facebook"
+                                                                                        action:@"FacebookCancelled"
+                                                                                         label:[NSString stringWithFormat:@"FbCancelled: %@", FbShareSheetUrl]
+                                                                                         value:[NSNumber numberWithInt:1]] build]];
                          }
                      }
                  }];
@@ -441,7 +467,9 @@
                 return NO;
             } else {
                 
-                [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Facebook" withAction:@"showNoFacebookAccount" withLabel:@"cantPostFromFacebookShareSheet" withValue:[NSNumber numberWithInt:1]];
+                [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Facebook"
+                                                                           action:@"showNoFacebookAccount"
+                                                                            label:@"cantPostFromFacebookShareSheet"                                                                             value:[NSNumber numberWithInt:1]] build]];
                 
                 UIAlertView *alertView = [[UIAlertView alloc]
                                           initWithTitle:@"No Facebook Account"
@@ -457,7 +485,10 @@
             
             NSLog(@"Does not support Social Framework and can NOT share via Facebook Sheet, open in Safari");
             
-            [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Facebook" withAction:@"openFbInSafari" withLabel:FbShareSheetUrl withValue:[NSNumber numberWithInt:1]];
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Facebook"
+                                                                       action:@"openFbInSafari"
+                                                                        label:FbShareSheetUrl
+                                                                        value:[NSNumber numberWithInt:1]] build]];
             
             [[UIApplication sharedApplication] openURL:request.URL];
             return NO;
@@ -503,7 +534,10 @@
             // Check that a mail account is available
             if ([MFMailComposeViewController canSendMail]) {
                 
-                [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"EmailShare" withAction:@"clickedEmailShareLink" withLabel:[NSString stringWithFormat:@"Emailed: %@", EmailShareTitle] withValue:[NSNumber numberWithInt:1]];
+                [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"EmailShare"
+                                                                           action:@"clickedEmailShareLink"
+                                                                            label:[NSString stringWithFormat:@"Emailed: %@", EmailShareTitle]
+                                                                            value:[NSNumber numberWithInt:1]] build]];
                 
                 MFMailComposeViewController * emailController = [[MFMailComposeViewController alloc] init];
                 emailController.mailComposeDelegate = self;
@@ -518,7 +552,10 @@
             }
             // Show error if no mail account is active
             else {
-                [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"EmailShare" withAction:@"clickedEmailShareLink" withLabel:@"noEmailAccountsActive" withValue:[NSNumber numberWithInt:1]];
+                [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"EmailShare"
+                                                                           action:@"clickedEmailShareLink"
+                                                                            label:@"noEmailAccountsActive"
+                                                                            value:[NSNumber numberWithInt:1]] build]];
                 
                 [[UIApplication sharedApplication] openURL:request.URL];
                 return NO;
@@ -528,7 +565,10 @@
         if(
            ![SurfShell_currentUrl hasSuffix:@".pdf"] && ![SurfShell_currentUrl hasPrefix:SurfShell_baseUrl] && ![SurfShell_currentUrl hasPrefix:[@"https://www.google.com/url?q=" stringByAppendingString:SurfShell_baseUrl]] && ![SurfShell_currentUrl hasPrefix:@"https://twitter.com/share"] && ![SurfShell_currentUrl hasPrefix:@"http://www.facebook.com/sharer"] && ![SurfShell_currentUrl hasPrefix:@"mailto:"]
            ){
-            [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"openInSafari" withAction:@"externalLinkClick" withLabel:[NSString stringWithFormat:@"External Link: %@", SurfShell_currentUrl] withValue:[NSNumber numberWithInt:1]];
+            [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"openInSafari"
+                                                                       action:@"externalLinkClick"
+                                                                        label:[NSString stringWithFormat:@"External Link: %@", SurfShell_currentUrl]
+                                                                        value:[NSNumber numberWithInt:1]] build]];
             
             [[UIApplication sharedApplication] openURL:request.URL];
             return NO;
@@ -558,7 +598,8 @@
         resultString = @"Main App Screen";
     }
     
-    [[GAI sharedInstance].defaultTracker trackView:resultString];
+    self.screenName = resultString;
+    [self.tracker send:[[GAIDictionaryBuilder createAppView] build]];
     NSLog(@"The analytics tracking screen is: %@", resultString);
     // END Google Analytics Screen Tracking
     
@@ -567,7 +608,10 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"EmailShare" withAction:@"closeEmailModal" withLabel:@"emailSentOrCanceled" withValue:[NSNumber numberWithInt:1]];
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"EmailShare"
+                                                               action:@"closeEmailModal"
+                                                                label:@"emailSentOrCancelled"
+                                                                value:[NSNumber numberWithInt:1]] build]];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -651,7 +695,10 @@
     if ([error code] != NSURLErrorCancelled) {
         //show error alert, etc.
         
-        [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Error" withAction:@"connectionErrorShown" withLabel:@"didFailLoadWithError" withValue:[NSNumber numberWithInt:1]];
+        [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Error"
+                                                                   action:@"connectionErrorShown"
+                                                                    label:@"didFailLoadWithError"
+                                                                    value:[NSNumber numberWithInt:1]] build]];
         
         NSLog(@"fire didFailLoadWithError");
         

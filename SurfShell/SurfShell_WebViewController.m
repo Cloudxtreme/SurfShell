@@ -1,6 +1,6 @@
 /* ==========================================================
  * SurfShell_WebViewController.m
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )
@@ -207,7 +207,8 @@
     NSLog(@"pdfTitle:%@", pdfTitle);
     
     // Google Analytics Screen Name
-    self.trackedViewName = [NSString stringWithFormat:@"Modal View: %@", pdfTitle];
+    self.screenName = pdfTitle;
+    [self.tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
     self->mainWebView.scrollView.bounces = NO;
     
@@ -434,6 +435,11 @@
     if ([error code] != NSURLErrorCancelled) {
         //show error alert, etc.
         
+        [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Error"
+                                                                   action:@"connectionErrorShown"
+                                                                    label:@"didFailLoadWithError"
+                                                                    value:[NSNumber numberWithInt:1]] build]];
+        
         NSLog(@"fire didFailLoadWithError");
         
         [activityImageView stopAnimating];
@@ -520,9 +526,14 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
     
-	if([title isEqualToString:NSLocalizedString(@"Open in Safari", @"")])
+	if([title isEqualToString:NSLocalizedString(@"Open in Safari", @"")]) {
         [[UIApplication sharedApplication] openURL:self.mainWebView.request.URL];
-    
+        
+        [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Safari"
+                                                                   action:@"Open Modal Page in Safari"
+                                                                    label:[NSString stringWithFormat:@"Opened in Safari: %@", self.mainWebView.request.URL]
+                                                                    value:[NSNumber numberWithInt:1]] build]];
+    }
     if([title isEqualToString:NSLocalizedString(@"Copy link", @"")]) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = self.mainWebView.request.URL.absoluteString;
@@ -537,7 +548,10 @@
   		[mailViewController setMessageBody:self.mainWebView.request.URL.absoluteString isHTML:NO];
 		mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
         
-        [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Email" withAction:@"Clicked to Email Link" withLabel:[NSString stringWithFormat:@"Email link: %@", SurfShell_fullDocumentName] withValue:[NSNumber numberWithInt:1]];
+        [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Email"
+                                                                   action:@"Clicked to Email Link"
+                                                                    label:[NSString stringWithFormat:@"Email link: %@", SurfShell_fullDocumentName]
+                                                                    value:[NSNumber numberWithInt:1]] build]];
         
         [self presentViewController:mailViewController animated:YES completion:nil];
 	}
@@ -556,7 +570,10 @@
   		[mailViewController setMessageBody:[NSString stringWithFormat:@"%@ via %@ ", pdfTitle, SurfShell_companyOrSiteName] isHTML:NO];
 		mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
         
-        [[GAI sharedInstance].defaultTracker trackEventWithCategory:@"Email" withAction:@"Clicked to Email PDF" withLabel:[NSString stringWithFormat:@"Email PDF: %@", SurfShell_fullDocumentName] withValue:[NSNumber numberWithInt:1]];
+        [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Email"
+                                                                   action:@"Clicked to Email PDF"
+                                                                    label:[NSString stringWithFormat:@"Email PDF: %@", SurfShell_fullDocumentName]
+                                                                    value:[NSNumber numberWithInt:1]] build]];
         
         [self presentViewController:mailViewController animated:YES completion:nil];
 	}
@@ -571,6 +588,11 @@
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error
 {
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"EmailShare"
+                                                               action:@"closeEmailModal"
+                                                                label:@"emailSentOrCancelled"
+                                                                value:[NSNumber numberWithInt:1]] build]];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

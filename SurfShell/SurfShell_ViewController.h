@@ -1,6 +1,6 @@
 /* ==========================================================
  * SurfShell_ViewController.h
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )
@@ -39,6 +39,7 @@
 #import "SurfShell_Globals.h"
 #import "GAI.h"
 #import "GAITrackedViewController.h"
+#import "GAIDictionaryBuilder.h"
 #import "GAITracker.h"
 
 @interface SurfShell_ViewController : GAITrackedViewController <MFMailComposeViewControllerDelegate> {

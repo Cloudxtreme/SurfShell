@@ -1,6 +1,6 @@
 /* ==========================================================
  * SurfShell_AppDelegate.m
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )
@@ -38,10 +38,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Optional: automatically send uncaught exceptions to Google Analytics.
     [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
     [GAI sharedInstance].dispatchInterval = 20;
-    [GAI sharedInstance].debug = YES;
-    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:SurfShell_kTrackingId];
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker.
+    self.tracker = [[GAI sharedInstance] trackerWithName:SurfShell_companyOrSiteName
+                                              trackingId:SurfShell_GA_trackingID];
     return YES;
 }
 

@@ -1,6 +1,6 @@
 /* ==========================================================
  * main.m
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )

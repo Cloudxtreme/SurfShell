@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B021C2A017A9A0D10087D9F3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B021C29F17A9A0D10087D9F3 /* FacebookSDK.framework */; };
 		B0408F5517B2D98A0019D597 /* app-icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = B0408F5417B2D98A0019D597 /* app-icon-120.png */; };
 		B0408F5717B2D98F0019D597 /* app-icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B0408F5617B2D98F0019D597 /* app-icon-1024.png */; };
 		B044192915AB020E00777148 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B044192815AB020E00777148 /* UIKit.framework */; };
@@ -83,10 +82,15 @@
 		B04C291217AAF4D400471447 /* activity24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B04C28F517AAF4D400471447 /* activity24@2x.png */; };
 		B04C291717AAF72400471447 /* app-icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B04C291317AAF72400471447 /* app-icon-57.png */; };
 		B04C291817AAF72400471447 /* app-icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B04C291417AAF72400471447 /* app-icon-114.png */; };
-		B04C292717AB022500471447 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04C292617AB022500471447 /* libGoogleAnalytics.a */; };
-		B05BAF2215AC57390092E029 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05BAF2115AC57390092E029 /* CoreData.framework */; };
-		B05BAF2415AC57450092E029 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05BAF2315AC57450092E029 /* SystemConfiguration.framework */; };
 		B09D2EFD17AC520E00B960E7 /* SurfShell_Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = B09D2EFC17AC520E00B960E7 /* SurfShell_Globals.m */; };
+		B0A289DD17E0CB8500B5AAC6 /* app-icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A289DA17E0CB8500B5AAC6 /* app-icon-80.png */; };
+		B0A289DE17E0CB8500B5AAC6 /* app-icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A289DB17E0CB8500B5AAC6 /* app-icon-58.png */; };
+		B0A289DF17E0CB8500B5AAC6 /* app-icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A289DC17E0CB8500B5AAC6 /* app-icon-29.png */; };
+		B0A289E917E0CCE100B5AAC6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05BAF2115AC57390092E029 /* CoreData.framework */; };
+		B0A289EA17E0CCE600B5AAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05BAF2315AC57450092E029 /* SystemConfiguration.framework */; };
+		B0A289EC17E0CCF200B5AAC6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A289EB17E0CCF200B5AAC6 /* FacebookSDK.framework */; };
+		B0A289ED17E0CD0A00B5AAC6 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A289E717E0CC9500B5AAC6 /* libGoogleAnalyticsServices.a */; };
+		B0A289EF17E0CD1A00B5AAC6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A289EE17E0CD1A00B5AAC6 /* libz.dylib */; };
 		B0D8DE7E1636CC7000B65090 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D8DE7D1636CC7000B65090 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B0D8DE801636CC7700B65090 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D8DE7F1636CC7700B65090 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B0D8DE821636CC7D00B65090 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D8DE811636CC7D00B65090 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -95,7 +99,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B021C29F17A9A0D10087D9F3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		B024E0AE16A4A9C900D90491 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		B0408F5417B2D98A0019D597 /* app-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-120.png"; path = "graphics/app-icon-120.png"; sourceTree = SOURCE_ROOT; };
 		B0408F5617B2D98F0019D597 /* app-icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-1024.png"; path = "graphics/app-icon-1024.png"; sourceTree = SOURCE_ROOT; };
@@ -179,16 +182,22 @@
 		B04C28F517AAF4D400471447 /* activity24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "activity24@2x.png"; path = "graphics/activityImageView/activity24@2x.png"; sourceTree = SOURCE_ROOT; };
 		B04C291317AAF72400471447 /* app-icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-57.png"; path = "graphics/app-icon-57.png"; sourceTree = SOURCE_ROOT; };
 		B04C291417AAF72400471447 /* app-icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon-114.png"; path = "graphics/app-icon-114.png"; sourceTree = SOURCE_ROOT; };
-		B04C292117AB022500471447 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "Google-Analytics-iOS-SDK/GAI.h"; sourceTree = SOURCE_ROOT; };
-		B04C292217AB022500471447 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "Google-Analytics-iOS-SDK/GAITrackedViewController.h"; sourceTree = SOURCE_ROOT; };
-		B04C292317AB022500471447 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "Google-Analytics-iOS-SDK/GAITracker.h"; sourceTree = SOURCE_ROOT; };
-		B04C292417AB022500471447 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "Google-Analytics-iOS-SDK/GAITransaction.h"; sourceTree = SOURCE_ROOT; };
-		B04C292517AB022500471447 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "Google-Analytics-iOS-SDK/GAITransactionItem.h"; sourceTree = SOURCE_ROOT; };
-		B04C292617AB022500471447 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "Google-Analytics-iOS-SDK/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
 		B05BAF2115AC57390092E029 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B05BAF2315AC57450092E029 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B09D2EFB17AC520E00B960E7 /* SurfShell_Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurfShell_Globals.h; path = SurfShell/SurfShell_Globals.h; sourceTree = SOURCE_ROOT; };
 		B09D2EFC17AC520E00B960E7 /* SurfShell_Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurfShell_Globals.m; path = SurfShell/SurfShell_Globals.m; sourceTree = SOURCE_ROOT; };
+		B0A289DA17E0CB8500B5AAC6 /* app-icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-80.png"; sourceTree = "<group>"; };
+		B0A289DB17E0CB8500B5AAC6 /* app-icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-58.png"; sourceTree = "<group>"; };
+		B0A289DC17E0CB8500B5AAC6 /* app-icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-29.png"; sourceTree = "<group>"; };
+		B0A289E117E0CC9500B5AAC6 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		B0A289E217E0CC9500B5AAC6 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		B0A289E317E0CC9500B5AAC6 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		B0A289E417E0CC9500B5AAC6 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		B0A289E517E0CC9500B5AAC6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		B0A289E617E0CC9500B5AAC6 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		B0A289E717E0CC9500B5AAC6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		B0A289EB17E0CCF200B5AAC6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		B0A289EE17E0CD1A00B5AAC6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B0D8DE7D1636CC7000B65090 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B0D8DE7F1636CC7700B65090 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B0D8DE811636CC7D00B65090 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -201,18 +210,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A289EF17E0CD1A00B5AAC6 /* libz.dylib in Frameworks */,
+				B0A289ED17E0CD0A00B5AAC6 /* libGoogleAnalyticsServices.a in Frameworks */,
+				B0A289EC17E0CCF200B5AAC6 /* FacebookSDK.framework in Frameworks */,
+				B0A289EA17E0CCE600B5AAC6 /* SystemConfiguration.framework in Frameworks */,
+				B0A289E917E0CCE100B5AAC6 /* CoreData.framework in Frameworks */,
 				B0D8DE821636CC7D00B65090 /* Social.framework in Frameworks */,
 				B0D8DE801636CC7700B65090 /* Accounts.framework in Frameworks */,
 				B0D8DE7E1636CC7000B65090 /* AdSupport.framework in Frameworks */,
 				B0EA31921635E33200A635CE /* Twitter.framework in Frameworks */,
 				B0DD328715EBFA9200D55CE1 /* MessageUI.framework in Frameworks */,
-				B05BAF2415AC57450092E029 /* SystemConfiguration.framework in Frameworks */,
-				B05BAF2215AC57390092E029 /* CoreData.framework in Frameworks */,
 				B044192915AB020E00777148 /* UIKit.framework in Frameworks */,
 				B044192B15AB020E00777148 /* Foundation.framework in Frameworks */,
 				B044192D15AB020E00777148 /* CoreGraphics.framework in Frameworks */,
-				B021C2A017A9A0D10087D9F3 /* FacebookSDK.framework in Frameworks */,
-				B04C292717AB022500471447 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +249,8 @@
 		B044192715AB020E00777148 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B021C29F17A9A0D10087D9F3 /* FacebookSDK.framework */,
+				B0A289EE17E0CD1A00B5AAC6 /* libz.dylib */,
+				B0A289EB17E0CCF200B5AAC6 /* FacebookSDK.framework */,
 				B024E0AE16A4A9C900D90491 /* QuickLook.framework */,
 				B0D8DE811636CC7D00B65090 /* Social.framework */,
 				B0D8DE7F1636CC7700B65090 /* Accounts.framework */,
@@ -258,6 +269,7 @@
 		B044192E15AB020E00777148 /* SurfShell */ = {
 			isa = PBXGroup;
 			children = (
+				B0A289E017E0CC7800B5AAC6 /* Google Analytics v3.0 */,
 				B04C288A17AAE59A00471447 /* MainStoryboard.storyboard */,
 				B04C280017AAE11200471447 /* SurfShell.entitlements */,
 				B04C27EC17AAE0ED00471447 /* SurfShell_AppDelegate.h */,
@@ -267,7 +279,6 @@
 				B04C27F017AAE0ED00471447 /* SurfShell_ViewController.h */,
 				B04C27F117AAE0ED00471447 /* SurfShell_ViewController.m */,
 				B0DD327815EBFA3F00D55CE1 /* SurfShell_WebViewController */,
-				B05BAF1215AC55AC0092E029 /* Google Analytics Library */,
 				B044192F15AB020E00777148 /* Supporting Files */,
 			);
 			path = SurfShell;
@@ -290,6 +301,9 @@
 			isa = PBXGroup;
 			children = (
 				B04C289917AAEC0400471447 /* Default-568h@2x.png */,
+				B0A289DA17E0CB8500B5AAC6 /* app-icon-80.png */,
+				B0A289DB17E0CB8500B5AAC6 /* app-icon-58.png */,
+				B0A289DC17E0CB8500B5AAC6 /* app-icon-29.png */,
 				B04C28A317AAEE6400471447 /* connectionError-568h.png */,
 				B0408F5417B2D98A0019D597 /* app-icon-120.png */,
 				B04C28AB17AAEE6A00471447 /* webViewLoadImage-568h.png */,
@@ -307,19 +321,6 @@
 				B08313AD15EE98100088A512 /* activityImageView */,
 			);
 			name = images;
-			sourceTree = "<group>";
-		};
-		B05BAF1215AC55AC0092E029 /* Google Analytics Library */ = {
-			isa = PBXGroup;
-			children = (
-				B04C292117AB022500471447 /* GAI.h */,
-				B04C292217AB022500471447 /* GAITrackedViewController.h */,
-				B04C292317AB022500471447 /* GAITracker.h */,
-				B04C292417AB022500471447 /* GAITransaction.h */,
-				B04C292517AB022500471447 /* GAITransactionItem.h */,
-				B04C292617AB022500471447 /* libGoogleAnalytics.a */,
-			);
-			name = "Google Analytics Library";
 			sourceTree = "<group>";
 		};
 		B08313AD15EE98100088A512 /* activityImageView */ = {
@@ -377,6 +378,20 @@
 			path = activityImageView;
 			sourceTree = "<group>";
 		};
+		B0A289E017E0CC7800B5AAC6 /* Google Analytics v3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				B0A289E117E0CC9500B5AAC6 /* GAI.h */,
+				B0A289E217E0CC9500B5AAC6 /* GAIDictionaryBuilder.h */,
+				B0A289E317E0CC9500B5AAC6 /* GAIFields.h */,
+				B0A289E417E0CC9500B5AAC6 /* GAILogger.h */,
+				B0A289E517E0CC9500B5AAC6 /* GAITrackedViewController.h */,
+				B0A289E617E0CC9500B5AAC6 /* GAITracker.h */,
+				B0A289E717E0CC9500B5AAC6 /* libGoogleAnalyticsServices.a */,
+			);
+			name = "Google Analytics v3.0";
+			sourceTree = "<group>";
+		};
 		B0DD327815EBFA3F00D55CE1 /* SurfShell_WebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +441,11 @@
 				CLASSPREFIX = SurfShell_;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = adamdehaven;
+				TargetAttributes = {
+					B044192315AB020E00777148 = {
+						DevelopmentTeam = TFH2J982NF;
+					};
+				};
 			};
 			buildConfigurationList = B044191E15AB020D00777148 /* Build configuration list for PBXProject "SurfShell" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -469,6 +489,7 @@
 				B04C28C817AAF4CC00471447 /* activity2.png in Resources */,
 				B04C28C917AAF4CC00471447 /* activity2@2x.png in Resources */,
 				B04C28CA17AAF4CC00471447 /* activity3.png in Resources */,
+				B0A289DE17E0CB8500B5AAC6 /* app-icon-58.png in Resources */,
 				B04C28CB17AAF4CC00471447 /* activity3@2x.png in Resources */,
 				B04C28CC17AAF4CC00471447 /* activity4.png in Resources */,
 				B04C28CD17AAF4CC00471447 /* activity4@2x.png in Resources */,
@@ -491,11 +512,13 @@
 				B04C28FB17AAF4D400471447 /* activity13.png in Resources */,
 				B04C28FC17AAF4D400471447 /* activity13@2x.png in Resources */,
 				B04C28FD17AAF4D400471447 /* activity14.png in Resources */,
+				B0A289DD17E0CB8500B5AAC6 /* app-icon-80.png in Resources */,
 				B04C28FE17AAF4D400471447 /* activity14@2x.png in Resources */,
 				B04C28FF17AAF4D400471447 /* activity15.png in Resources */,
 				B04C290017AAF4D400471447 /* activity15@2x.png in Resources */,
 				B04C290117AAF4D400471447 /* activity16.png in Resources */,
 				B04C290217AAF4D400471447 /* activity16@2x.png in Resources */,
+				B0A289DF17E0CB8500B5AAC6 /* app-icon-29.png in Resources */,
 				B04C290317AAF4D400471447 /* activity17.png in Resources */,
 				B04C290417AAF4D400471447 /* activity17@2x.png in Resources */,
 				B04C290517AAF4D400471447 /* activity18.png in Resources */,
@@ -630,23 +653,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Dehaven (CYN62RPH3A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/adehaven/GitHub/SurfShell,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SurfShell/SurfShell-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "SurfShell/SurfShell-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/SurfShell\"",
-					"\"$(SRCROOT)/Google-Analytics-iOS-SDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = /Users/adehaven/GitHub/SurfShell/SurfShell;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = SurfShell;
-				PROVISIONING_PROFILE = "79D9ED82-CCA3-4202-9F6A-DA7941F46D68";
+				PROVISIONING_PROFILE = "A353F5BA-7AD5-4E18-8422-F261FEBB4BB3";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -657,25 +678,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Adam Dehaven (CYN62RPH3A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WireCrafters LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/adehaven/GitHub/SurfShell,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SurfShell/SurfShell-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "SurfShell/SurfShell-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/SurfShell\"",
-					"\"$(SRCROOT)/Google-Analytics-iOS-SDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = /Users/adehaven/GitHub/SurfShell/SurfShell;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = SurfShell;
-				PROVISIONING_PROFILE = "79D9ED82-CCA3-4202-9F6A-DA7941F46D68";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF58CE62-F0E3-4901-BE23-BE7363179771";
+				PROVISIONING_PROFILE = "A353F5BA-7AD5-4E18-8422-F261FEBB4BB3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A353F5BA-7AD5-4E18-8422-F261FEBB4BB3";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

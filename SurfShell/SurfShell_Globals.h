@@ -1,6 +1,6 @@
 /* ==========================================================
  * SurfShell_Globals.h
- * SurfShell v1.0
+ * SurfShell v2.0
  * https://github.com/adamdehaven/SurfShell
  *
  * Author: Adam Dehaven ( @adamdehaven )
@@ -65,10 +65,10 @@
 #define SurfShell_userAgent_iPhone5 @"SurfShell_iOS_App_Tall" 
 
 // Set custom user agent for other iPhones.
-#define SurfShell_userAgent_iPhone @"SurfShell_iOS_App" 
+#define SurfShell_userAgent_iPhone @"SurfShell_iOS_App"
 
-// Set Google Analytics iOS App Tracking code. https://developers.google.com/analytics/devguides/collection/ios/v2/
-#define SurfShell_kTrackingId @"UA-XXXXXXX-X" 
+// Set Google Analytics iOS App Tracking code. https://developers.google.com/analytics/devguides/collection/ios/
+#define SurfShell_GA_trackingID @"UA-XXXXXXX-X" 
 
 /*
  * DO NOT EDIT BELOW
