@@ -113,7 +113,7 @@ FILE NAME|SIZE|DEVICE(S)
 ## AUTHOR
 
 **Adam Dehaven**
-* [http://about.adamdehaven.com](http://about.adamdehaven.com)
+* [http://adamdehaven.com](http://adamdehaven.com)
 * [http://twitter.com/adamdehaven](http://twitter.com/adamdehaven)
 * [http://github.com/adamdehaven](http://github.com/adamdehaven)
 * [http://dribbble.com/adamdehaven](http://dribbble.com/adamdehaven)
