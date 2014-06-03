@@ -32,7 +32,7 @@ A powerful iOS app shell to turn any website into an elegant, releasable iOS app
 
 While the steps appear complicated at first sight, these 10 steps will have your app up and running in **_less than 5 minutes_**!
 
-STEP|INSTRUCTIONS
+ STEP | INSTRUCTIONS
 :---:|---
 1.|[Download the SurfShell package](https://github.com/adamdehaven/SurfShell/archive/master.zip).
 2.|Open `SurfShell.xcodeproj` in XCode.
